@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Anniversary Babu ❤️</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Cinzel:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- Global petals & hearts on all pages -->
+  <div class="global-petals" id="globalPetals"></div>
+  <div class="global-hearts" id="globalHearts"></div>
+
+  <!-- ── SECTION 1: LANDING / COUNTDOWN ─────────────────────── -->
+  <section id="s-landing" class="section active">
+    <canvas id="starsCanvas1"></canvas>
+    <div class="orb o1"></div>
+    <div class="orb o2"></div>
+    <div class="landing-content">
+      <p class="eyebrow">a little something for</p>
+      <h1 class="big-name">My Babu</h1>
+      <div class="countdown-wrap">
+        <p class="countdown-label">our special day arrives in</p>
+        <div class="countdown-boxes">
+          <div class="cbox"><span id="cd-days">00</span><label>Days</label></div>
+          <div class="cdot">:</div>
+          <div class="cbox"><span id="cd-hours">00</span><label>Hours</label></div>
+          <div class="cdot">:</div>
+          <div class="cbox"><span id="cd-mins">00</span><label>Minutes</label></div>
+          <div class="cdot">:</div>
+          <div class="cbox"><span id="cd-secs">00</span><label>Seconds</label></div>
+        </div>
+      </div>
+      <button class="next-btn" onclick="goTo('s-galaxy')">Explore the Galaxy of Love ✦</button>
+    </div>
+    <div class="scroll-hint">click the button Babuuuuuu 🩷</div>
+  </section>
+
+  <!-- ── SECTION 2: GALAXY STARS ────────────────────────────── -->
+  <section id="s-galaxy" class="section">
+    <canvas id="galaxyCanvas"></canvas>
+    <div class="galaxy-ui">
+      <h2 class="section-title">10 Reasons I Love You</h2>
+      <p class="galaxy-hint">✦ tap any star to discover a reason ✦</p>
+      <div class="stars-field" id="starsField"></div>
+    </div>
+    <div class="reason-popup" id="reasonPopup">
+      <div class="reason-card">
+        <div class="reason-num" id="reasonNum">01</div>
+        <p class="reason-text" id="reasonText"></p>
+        <button class="close-reason" onclick="closeReason()">✦ close ✦</button>
+      </div>
+    </div>
+    <button class="next-btn abs-bottom" onclick="goTo('s-letter')">Read My Letter ❤️</button>
+  </section>
+
+  <!-- ── SECTION 3: LOVE LETTER ─────────────────────────────── -->
+  <section id="s-letter" class="section">
+    <canvas id="starsCanvas2"></canvas>
+    <div class="orb o3"></div>
+    <div class="letter-wrap">
+      <div class="letter-card">
+        <p class="letter-eyebrow">a letter from the heart</p>
+        <h2 class="letter-title">Dear My Babu,</h2>
+        <div class="letter-body" id="letterBody"></div>
+        <p class="letter-sign">— yours, always ❤️</p>
+      </div>
+    </div>
+    <div style="position:relative;z-index:10;text-align:center;padding-bottom:1rem;">
+      <button class="next-btn abs-bottom" onclick="goTo('s-photos')">Our Memories 📸</button>
+    </div>
+  </section>
+
+  <!-- ── SECTION 4: PHOTO SCRAPBOOK ────────────────────────── -->
+  <section id="s-photos" class="section">
+    <canvas id="starsCanvas3"></canvas>
+    <div class="photos-wrap">
+      <h2 class="section-title">She ❤️</h2>
+      <p class="galaxy-hint">You, forever saved in my ❤️</p>
+      <div class="polaroid-grid">
+        <div class="polaroid">
+          <div class="polaroid-img"><img src="images/image1.jpg" alt="Memory 1" onerror="this.parentElement.classList.add('no-img')"/></div>
+          <p class="polaroid-caption">my babu 🌸</p>
+        </div>
+        <div class="polaroid tilt-right">
+          <div class="polaroid-img"><img src="images/image2.png" alt="Memory 2" onerror="this.parentElement.classList.add('no-img')"/></div>
+          <p class="polaroid-caption">my favourite memory 💕</p>
+        </div>
+        <div class="polaroid tilt-left">
+          <div class="polaroid-img"><img src="images/image3.jpeg" alt="Memory 3" onerror="this.parentElement.classList.add('no-img')"/></div>
+          <p class="polaroid-caption">i love this one 🥰</p>
+        </div>
+        <div class="polaroid">
+          <div class="polaroid-img"><img src="images/image4.jpeg" alt="Memory 4" onerror="this.parentElement.classList.add('no-img')"/></div>
+          <p class="polaroid-caption">always smiling with you ✨</p>
+        </div>
+        <div class="polaroid tilt-right">
+          <div class="polaroid-img"><img src="images/image6.jpeg" alt="Memory 5" onerror="this.parentElement.classList.add('no-img')"/></div>
+          <p class="polaroid-caption">the best girl 🌹</p>
+        </div>
+      </div>
+    </div>
+    <div style="position:relative;z-index:10;text-align:center;padding-top:1rem;">
+      <button class="next-btn abs-bottom" onclick="goTo('s-finale')">The Big Surprise 🎉</button>
+    </div>
+  </section>
+
+  <!-- ── SECTION 5: FINALE / FIREWORKS ─────────────────────── -->
+  <section id="s-finale" class="section">
+    <canvas id="fireworksCanvas"></canvas>
+    <div class="finale-content" id="finaleContent">
+      <div class="cake-wrap">
+        <div class="cake">💍</div>
+      </div>
+      <h1 class="finale-title">Happy Anniversary</h1>
+      <h2 class="finale-name">My Babu ❤️</h2>
+      <p class="finale-msg">March 19th is the day our forever began.<br/>Every single day with you is a gift I will never stop being grateful for.<br/>Here's to us — today, tomorrow, and always. 🌹</p>
+      <div class="finale-hearts">
+        <span>💖</span><span>🌹</span><span>✨</span><span>💕</span><span>🌸</span>
+      </div>
+      <button class="restart-btn" onclick="goTo('s-landing')">↺ Start Over</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
